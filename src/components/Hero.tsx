@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const WA_LINK =
-  "https://wa.me/5579981423483?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais!";
+import { SiteButton, DefaultCTAButton } from "@/components/CTA";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -78,7 +76,7 @@ export default function Hero() {
           empresas — do zero ao ar, sem complicação.
         </motion.p>
 
-        {/* Botoes */}
+        {/* Botões */}
         <motion.div
           custom={3}
           variants={fadeUp}
@@ -86,16 +84,7 @@ export default function Hero() {
           animate="show"
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <motion.a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="w-full sm:w-auto bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-semibold text-base px-8 py-3.5 rounded-full transition-colors shadow-md shadow-blue-200"
-          >
-            Falar no WhatsApp
-          </motion.a>
+          <SiteButton size="lg" />
 
           <motion.a
             href="#portfolio"

@@ -1,3 +1,7 @@
+"use client";
+
+import { DefaultCTAButton } from "@/components/CTA";
+
 const links = [
   { label: "Sobre", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
@@ -28,10 +32,13 @@ export default function Footer() {
           ))}
         </nav>
 
-        {/* Copyright */}
-        <p className="text-xs text-[#6B7280]">
-          © {new Date().getFullYear()} JCINF. Todos os direitos reservados.
-        </p>
+        {/* CTA e Copyright */}
+        <div className="flex items-center gap-4">
+          <DefaultCTAButton label="Falar agora" size="sm" />
+          <p className="text-xs text-[#6B7280]">
+            © {new Date().getFullYear()} JCINF. Todos os direitos reservados.
+          </p>
+        </div>
 
       </div>
     </footer>

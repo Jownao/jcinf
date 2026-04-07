@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const WA_LINK =
-  "https://wa.me/5579981423483?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais!";
+import { BotButton, BioButton, SiteButton, DefaultCTAButton } from "@/components/CTA";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -24,26 +22,31 @@ const digitais = [
     icon: "🌐",
     title: "Sites Profissionais",
     desc: "Sites modernos, rápidos e otimizados para atrair e converter clientes.",
+    service: "site" as const,
   },
   {
     icon: "🤖",
     title: "Bot de WhatsApp",
     desc: "Automatize o atendimento e responda clientes 24h sem precisar estar online.",
+    service: "bot" as const,
   },
   {
     icon: "🔔",
     title: "Lembretes Automáticos",
     desc: "Reduza faltas com envio automático de lembretes de consultas e compromissos.",
+    service: "bot" as const,
   },
   {
     icon: "📊",
     title: "Relatórios Automáticos",
     desc: "Receba relatórios mensais do seu negócio sem precisar montar planilha.",
+    service: "bot" as const,
   },
   {
     icon: "🔗",
     title: "Página de Links",
     desc: "Uma página personalizada com todos os seus links importantes num só lugar.",
+    service: "bio" as const,
   },
 ];
 
@@ -94,9 +97,23 @@ interface ServiceCardProps {
   icon: string;
   title: string;
   desc: string;
+  service?: "site" | "bot" | "bio" | "default";
 }
 
-function ServiceCard({ icon, title, desc }: ServiceCardProps) {
+function ServiceCard({ icon, title, desc, service = "default" }: ServiceCardProps) {
+  const renderCTAButton = () => {
+    switch (service) {
+      case "site":
+        return <SiteButton size="sm" />;
+      case "bot":
+        return <BotButton size="sm" />;
+      case "bio":
+        return <BioButton size="sm" />;
+      default:
+        return <DefaultCTAButton label="Saber mais" size="sm" />;
+    }
+  };
+
   return (
     <motion.div
       variants={fadeUp}
@@ -107,6 +124,9 @@ function ServiceCard({ icon, title, desc }: ServiceCardProps) {
       <span className="text-3xl">{icon}</span>
       <h3 className="text-[#111111] font-bold text-base">{title}</h3>
       <p className="text-[#6B7280] text-sm leading-relaxed">{desc}</p>
+      <div className="mt-2">
+        {renderCTAButton()}
+      </div>
     </motion.div>
   );
 }
@@ -194,16 +214,7 @@ export default function Servicos() {
               soluções sob medida para o seu negócio.
             </p>
           </div>
-          <motion.a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex-shrink-0 bg-white text-[#2563EB] font-bold text-sm px-8 py-3.5 rounded-full hover:bg-[#EFF6FF] transition-colors"
-          >
-            Conversar no WhatsApp
-          </motion.a>
+          <DefaultCTAButton label="Conversar no WhatsApp" size="lg" className="flex-shrink-0 w-full sm:w-auto" />
         </motion.div>
 
       </div>
