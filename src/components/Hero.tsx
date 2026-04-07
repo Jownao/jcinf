@@ -10,7 +10,7 @@ const fadeUp = {
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" as const },
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
   }),
 };
 
@@ -34,12 +34,11 @@ export default function Hero() {
       <div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, #2563EB 0%, transparent 70%)",
+          background: "radial-gradient(circle, #2563EB 0%, transparent 70%)",
         }}
       />
 
-      {/* Conteúdo */}
+      {/* Conteudo */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
 
         {/* Badge */}
@@ -79,7 +78,7 @@ export default function Hero() {
           empresas — do zero ao ar, sem complicação.
         </motion.p>
 
-        {/* Botões */}
+        {/* Botoes */}
         <motion.div
           custom={3}
           variants={fadeUp}
@@ -107,25 +106,6 @@ export default function Hero() {
             Ver Portfólio
           </motion.a>
         </motion.div>
-
-        {/* Indicador de scroll */}
-        <motion.div
-          custom={4}
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          className="mt-16 flex flex-col items-center gap-2 text-[#6B7280]"
-        >
-          <span className="text-xs font-medium tracking-widest uppercase">
-            Scroll
-          </span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            className="w-px h-8 bg-gradient-to-b from-[#6B7280] to-transparent"
-          />
-        </motion.div>
-
       </div>
     </section>
   );

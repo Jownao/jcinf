@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import ScrollNavigator from "@/components/ScrollNavigator";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${jakarta.variable}`}>
       <body className="min-h-full flex flex-col antialiased font-(family-name:--font-jakarta)">
         {children}
+        <ScrollNavigator />
       </body>
     </html>
   );
