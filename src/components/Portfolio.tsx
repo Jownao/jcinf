@@ -357,7 +357,7 @@ const projectsMap: Record<Category, Project[]> = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
 const stagger = {
@@ -464,7 +464,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 60 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
+              transition={{ duration: 0.35, ease: "easeOut" as const }}
               className="fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-[28px] max-h-[90vh] overflow-y-auto"
             >
               <div className="flex justify-center pt-3 pb-1">
