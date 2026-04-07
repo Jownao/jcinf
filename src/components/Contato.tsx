@@ -44,7 +44,7 @@ export default function Contato() {
           Vamos conversar?
         </motion.h2>
 
-        {/* Subtitulo */}
+        {/* Subtítulo */}
         <motion.p
           custom={2}
           variants={fadeUp}
@@ -53,8 +53,8 @@ export default function Contato() {
           viewport={{ once: true }}
           className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-xl mx-auto"
         >
-          Me conta o seu projeto e a gente ve o melhor caminho juntos.
-          Respondo rapido no WhatsApp.
+          Me conta o seu projeto e a gente vê o melhor caminho juntos.
+          Respondo rápido no WhatsApp.
         </motion.p>
 
         {/* Botoes */}
@@ -109,7 +109,7 @@ export default function Contato() {
         >
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
-            Resposta em ate 1 hora
+            Resposta em até 1 hora
           </div>
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -117,7 +117,7 @@ export default function Contato() {
           </div>
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]" />
-            Orcamento gratuito
+            Orçamento gratuito
           </div>
         </motion.div>
 

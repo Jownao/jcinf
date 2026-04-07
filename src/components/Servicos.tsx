@@ -128,7 +128,7 @@ export default function Servicos() {
     <section id="servicos" className="py-24 bg-[#F8F8F6]">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Cabecalho */}
+        {/* Cabeçalho */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,16 +140,16 @@ export default function Servicos() {
             O que fazemos
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#111111] leading-tight">
-            Servicos disponiveis
+            Serviços disponíveis
           </h2>
           <p className="text-[#6B7280] text-lg mt-4 max-w-xl mx-auto">
-            Do site profissional ao suporte tecnico — tudo que seu negocio
-            precisa num so lugar.
+            Do site profissional ao suporte técnico — tudo que seu negócio
+            precisa num só lugar.
           </p>
         </motion.div>
 
-        {/* Solucoes Digitais */}
-        <SectionLabel>Solucoes Digitais</SectionLabel>
+        {/* Soluções Digitais */}
+        <SectionLabel>Soluções Digitais</SectionLabel>
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -162,8 +162,8 @@ export default function Servicos() {
           ))}
         </motion.div>
 
-        {/* Suporte Tecnico */}
-        <SectionLabel>Suporte Tecnico</SectionLabel>
+        {/* Suporte Técnico */}
+        <SectionLabel>Suporte Técnico</SectionLabel>
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -187,11 +187,11 @@ export default function Servicos() {
         >
           <div>
             <h3 className="text-white font-extrabold text-2xl mb-2">
-              Nao encontrou o que precisa?
+              Não encontrou o que precisa?
             </h3>
             <p className="text-blue-200 text-base">
-              Se a sua ideia nao esta na lista, fale comigo. Desenvolvemos
-              solucoes sob medida para o seu negocio.
+              Se a sua ideia não está na lista, fale comigo. Desenvolvemos
+              soluções sob medida para o seu negócio.
             </p>
           </div>
           <motion.a

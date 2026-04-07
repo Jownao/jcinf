@@ -29,7 +29,7 @@ const categories: {
     id: "sites",
     tag: "Site",
     title: "Sites Profissionais",
-    subtitle: "Sites modernos para consultorios e pequenos negocios.",
+    subtitle: "Sites modernos para consultórios e pequenos negócios.",
     color: "text-[#2563EB]",
     bg: "bg-[#EFF6FF]",
     border: "border-[#BFDBFE]",
@@ -39,7 +39,7 @@ const categories: {
     id: "bot",
     tag: "Bot WhatsApp",
     title: "Bot de WhatsApp",
-    subtitle: "Atendimento automatizado 24h para o seu negocio.",
+    subtitle: "Atendimento automatizado 24h para o seu negócio.",
     color: "text-[#16A34A]",
     bg: "bg-[#F0FDF4]",
     border: "border-[#BBF7D0]",
@@ -48,8 +48,8 @@ const categories: {
   {
     id: "linkbio",
     tag: "Link da Bio",
-    title: "Pagina de Links",
-    subtitle: "Todos os seus links num so lugar, com sua identidade.",
+    title: "Página de Links",
+    subtitle: "Todos os seus links num só lugar, com sua identidade.",
     color: "text-[#EA580C]",
     bg: "bg-[#FFF7ED]",
     border: "border-[#FED7AA]",
@@ -131,15 +131,15 @@ function LinkBioCard({ color, emoji, name, links: ls }: {
 
 const siteProjects: Project[] = [
   {
-    name: "Consultorio Dra. Ana Lima",
-    desc: "Site para psicologa com apresentacao, servicos e agendamento online.",
+    name: "Consultório Dra. Ana Lima",
+    desc: "Site para psicóloga com apresentação, serviços e agendamento online.",
     mockup: (
       <DesktopMockup>
         <div className="bg-white min-h-[160px] p-4 flex flex-col gap-3">
           <div className="flex items-center justify-between mb-1">
             <span className="text-[10px] font-bold text-[#7c3aed]">Dra. Ana Lima</span>
             <div className="flex gap-2">
-              {["Sobre","Servicos","Contato"].map(l => (
+              {["Sobre","Serviços","Contato"].map(l => (
                 <span key={l} className="text-[7px] text-gray-400">{l}</span>
               ))}
             </div>
@@ -150,7 +150,7 @@ const siteProjects: Project[] = [
             <div className="w-16 h-5 bg-[#7c3aed] rounded-full mt-1 opacity-90" />
           </div>
           <div className="grid grid-cols-3 gap-1.5">
-            {["Ansiedade","Depressao","Relacionamentos"].map(s => (
+            {["Ansiedade","Depressão","Relacionamentos"].map(s => (
               <div key={s} className="bg-[#f5f3ff] rounded-md p-1.5 flex flex-col gap-0.5">
                 <div className="w-full h-1.5 bg-[#c4b5fd] rounded-full" />
                 <div className="w-2/3 h-1 bg-[#ddd6fe] rounded-full" />
@@ -162,15 +162,15 @@ const siteProjects: Project[] = [
     ),
   },
   {
-    name: "Clinica OdontoVida",
-    desc: "Site para dentista com galeria, equipe e formulario de contato.",
+    name: "Clínica OdontoVida",
+    desc: "Site para dentista com galeria, equipe e formulário de contato.",
     mockup: (
       <DesktopMockup>
         <div className="bg-white min-h-[160px] p-4 flex flex-col gap-3">
           <div className="flex items-center justify-between mb-1">
             <span className="text-[10px] font-bold text-[#0284c7]">OdontoVida</span>
             <div className="flex gap-2">
-              {["Equipe","Servicos","Agendar"].map(l => (
+              {["Equipe","Serviços","Agendar"].map(l => (
                 <span key={l} className="text-[7px] text-gray-400">{l}</span>
               ))}
             </div>
@@ -222,7 +222,7 @@ const siteProjects: Project[] = [
             </div>
           </div>
           <div className="grid grid-cols-2 gap-1.5">
-            {["Emagrecimento","Ganho de massa","Gestantes","Criancas"].map(s => (
+            {["Emagrecimento","Ganho de massa","Gestantes","Crianças"].map(s => (
               <div key={s} className="bg-[#f0fdf4] rounded-md p-1.5 flex flex-col gap-0.5">
                 <div className="w-full h-1.5 bg-[#86efac] rounded-full" />
                 <div className="w-2/3 h-1 bg-[#bbf7d0] rounded-full" />
@@ -237,22 +237,22 @@ const siteProjects: Project[] = [
 
 const botProjects: Project[] = [
   {
-    name: "Bot Consultorio Medico",
-    desc: "Agendamento automatico, confirmacao de consultas e informacoes 24h.",
+    name: "Bot Consultório Médico",
+    desc: "Agendamento automático, confirmação de consultas e informações 24h.",
     mockup: (
       <PhoneMockup>
         <div className="bg-[#ece5dd] min-h-[220px] flex flex-col">
           <div className="bg-[#075e54] px-3 py-2 flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-[#128c7e] flex items-center justify-center text-xs">🏥</div>
             <div>
-              <p className="text-white text-[9px] font-semibold">Clinica Sao Lucas</p>
+              <p className="text-white text-[9px] font-semibold">Clínica São Lucas</p>
               <p className="text-[#9de1da] text-[7px]">online</p>
             </div>
           </div>
           <div className="flex-1 p-2 flex flex-col gap-1.5">
-            <ChatBubble from="bot" text="Ola! Sou o assistente da Clinica. Como posso ajudar?" />
+            <ChatBubble from="bot" text="Olá! Sou o assistente da Clínica. Como posso ajudar?" />
             <ChatBubble from="user" text="Quero agendar uma consulta" />
-            <ChatBubble from="bot" text="Temos horarios na terca e quinta. Qual prefere?" />
+            <ChatBubble from="bot" text="Temos horários na terça e quinta. Qual prefere?" />
             <ChatBubble from="user" text="Quinta-feira" />
             <ChatBubble from="bot" text="Confirmado para quinta as 14h. Ate la!" />
           </div>
@@ -261,8 +261,8 @@ const botProjects: Project[] = [
     ),
   },
   {
-    name: "Bot Salao de Beleza",
-    desc: "Menu de servicos, agendamento e lembretes automaticos no dia anterior.",
+    name: "Bot Salão de Beleza",
+    desc: "Menu de serviços, agendamento e lembretes automáticos no dia anterior.",
     mockup: (
       <PhoneMockup>
         <div className="bg-[#ece5dd] min-h-[220px] flex flex-col">
@@ -275,7 +275,7 @@ const botProjects: Project[] = [
           </div>
           <div className="flex-1 p-2 flex flex-col gap-1.5">
             <ChatBubble from="bot" text="Oi! Bem-vinda ao Studio Bella. O que deseja?" />
-            <ChatBubble from="user" text="Ver servicos" />
+            <ChatBubble from="user" text="Ver serviços" />
             <ChatBubble from="bot" text="Temos: Corte R$50, Escova R$70, Manicure R$35." />
             <ChatBubble from="user" text="Escova" />
             <ChatBubble from="bot" text="Agendado! Amanha as 10h. Te mando lembrete!" />
@@ -285,8 +285,8 @@ const botProjects: Project[] = [
     ),
   },
   {
-    name: "Bot Clinica Veterinaria",
-    desc: "Informacoes sobre vacinas, agendamento de consultas e plantao 24h.",
+    name: "Bot Clínica Veterinária",
+    desc: "Informações sobre vacinas, agendamento de consultas e plantão 24h.",
     mockup: (
       <PhoneMockup>
         <div className="bg-[#ece5dd] min-h-[220px] flex flex-col">
@@ -298,11 +298,11 @@ const botProjects: Project[] = [
             </div>
           </div>
           <div className="flex-1 p-2 flex flex-col gap-1.5">
-            <ChatBubble from="bot" text="Ola! Sou o assistente da VetCare. Como ajudar?" />
+            <ChatBubble from="bot" text="Olá! Sou o assistente da VetCare. Como ajudar?" />
             <ChatBubble from="user" text="Quero saber sobre vacinas" />
-            <ChatBubble from="bot" text="Temos V8, Antirrabica e Gripe. Deseja agendar?" />
+            <ChatBubble from="bot" text="Temos V8, Antirrábica e Gripe. Deseja agendar?" />
             <ChatBubble from="user" text="Sim, para meu cachorro" />
-            <ChatBubble from="bot" text="Horario disponivel: sabado as 9h. Confirma?" />
+            <ChatBubble from="bot" text="Horário disponível: sábado as 9h. Confirma?" />
           </div>
         </div>
       </PhoneMockup>
@@ -312,13 +312,13 @@ const botProjects: Project[] = [
 
 const linkbioProjects: Project[] = [
   {
-    name: "Psicologa Dra. Carla",
-    desc: "Pagina de links com agendamento, Instagram, artigos e contato.",
+    name: "Psicóloga Dra. Carla",
+    desc: "Página de links com agendamento, Instagram, artigos e contato.",
     mockup: (
       <LinkBioCard
         color="bg-gradient-to-b from-[#7c3aed] to-[#a855f7]"
         emoji="🧠"
-        name="Dra. Carla — Psicologa"
+        name="Dra. Carla — Psicóloga"
         links={["Agendar Consulta","Instagram","Artigos","WhatsApp"]}
       />
     ),
@@ -331,19 +331,19 @@ const linkbioProjects: Project[] = [
         color="bg-gradient-to-b from-[#ea580c] to-[#f97316]"
         emoji="💪"
         name="Lucas Personal Trainer"
-        links={["Ver Planos","Treino Gratis","Instagram","WhatsApp"]}
+        links={["Ver Planos","Treino Grátis","Instagram","WhatsApp"]}
       />
     ),
   },
   {
     name: "Chef Mariana Cakes",
-    desc: "Cardapio, encomendas, galeria de bolos e redes sociais.",
+    desc: "Cardápio, encomendas, galeria de bolos e redes sociais.",
     mockup: (
       <LinkBioCard
         color="bg-gradient-to-b from-[#db2777] to-[#ec4899]"
         emoji="🎂"
         name="Mariana Cakes"
-        links={["Ver Cardapio","Fazer Encomenda","Instagram","TikTok"]}
+        links={["Ver Cardápio","Fazer Encomenda","Instagram","TikTok"]}
       />
     ),
   },
@@ -434,7 +434,7 @@ export default function Portfolio() {
               Quer um projeto assim?
             </h3>
             <p className="text-blue-200 text-base">
-              Entre em contato e desenvolvemos a solucao ideal para o seu negocio.
+              Entre em contato e desenvolvemos a solução ideal para o seu negócio.
             </p>
           </div>
           <motion.a
