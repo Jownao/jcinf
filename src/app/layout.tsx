@@ -15,9 +15,28 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
+const siteUrl = "https://jcinf.vercel.app";
+const title = "JCINF — Sites, Automações e Suporte Técnico";
+const description =
+  "Criamos sites profissionais, bots de WhatsApp e automações para pequenas empresas — e oferecemos suporte técnico completo: formatação, manutenção, upgrade e remoção de vírus. Fale com a JCINF.";
+
 export const metadata: Metadata = {
-  title: "JCINF — Sites, Bots e Automações para seu Negócio",
-  description: "Criamos sites profissionais, bots de WhatsApp e automações para pequenas empresas. Fale com a JCINF e digitalize seu negócio.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "JCINF",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({

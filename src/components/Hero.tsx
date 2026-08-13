@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Imagem de Fundo Abstrata */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero-bg.png"
+          src="/hero-bg.jpg"
           alt=""
           className="w-full h-full object-cover opacity-60"
         />

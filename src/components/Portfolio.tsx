@@ -4,11 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
 import TiltCard from "./TiltCard";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 
-const WA_LINK =
-  "https://wa.me/5579981423483?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais!";
+const WA_LINK = getWhatsAppLink();
 
 type Category = "sites" | "bot" | "linkbio";
+
+const categoryServiceMap: Record<Category, "site" | "bot" | "bio"> = {
+  sites: "site",
+  bot: "bot",
+  linkbio: "bio",
+};
 
 interface Project {
   name: string;
@@ -491,7 +497,7 @@ export default function Portfolio() {
                 <div className="mt-8 text-center">
                   <p className="text-[#6B7280] text-sm mb-4">Gostou? Entre em contato e fazemos o seu.</p>
                   <a
-                    href={WA_LINK}
+                    href={getWhatsAppLink(categoryServiceMap[active.id])}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-colors"

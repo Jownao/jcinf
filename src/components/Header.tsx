@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 
 const links = [
   { label: "Sobre", href: "#sobre" },
@@ -11,8 +12,7 @@ const links = [
   { label: "Contato", href: "#contato" },
 ];
 
-const WA_LINK =
-  "https://wa.me/5579981423483?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais!";
+const WA_LINK = getWhatsAppLink();
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
