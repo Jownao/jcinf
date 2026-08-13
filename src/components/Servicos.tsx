@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion";
 import { BotButton, BioButton, SiteButton, DefaultCTAButton } from "@/components/CTA";
+import { 
+  Globe, Bot, Bell, BarChart3, Link as LinkIcon,
+  Monitor, ShieldCheck, HardDriveDownload, FolderArchive,
+  MousePointer2, Brush, Zap, Wrench
+} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -19,31 +24,31 @@ const stagger = {
 
 const digitais = [
   {
-    icon: "🌐",
+    icon: <Globe className="w-8 h-8 text-[#2563EB]" />,
     title: "Sites Profissionais",
     desc: "Sites modernos, rápidos e otimizados para atrair e converter clientes.",
     service: "site" as const,
   },
   {
-    icon: "🤖",
+    icon: <Bot className="w-8 h-8 text-[#2563EB]" />,
     title: "Bot de WhatsApp",
     desc: "Automatize o atendimento e responda clientes 24h sem precisar estar online.",
     service: "bot" as const,
   },
   {
-    icon: "🔔",
+    icon: <Bell className="w-8 h-8 text-[#2563EB]" />,
     title: "Lembretes Automáticos",
     desc: "Reduza faltas com envio automático de lembretes de consultas e compromissos.",
     service: "bot" as const,
   },
   {
-    icon: "📊",
+    icon: <BarChart3 className="w-8 h-8 text-[#2563EB]" />,
     title: "Relatórios Automáticos",
     desc: "Receba relatórios mensais do seu negócio sem precisar montar planilha.",
     service: "bot" as const,
   },
   {
-    icon: "🔗",
+    icon: <LinkIcon className="w-8 h-8 text-[#2563EB]" />,
     title: "Página de Links",
     desc: "Uma página personalizada com todos os seus links importantes num só lugar.",
     service: "bio" as const,
@@ -52,49 +57,49 @@ const digitais = [
 
 const suporte = [
   {
-    icon: "🖥️",
+    icon: <Monitor className="w-8 h-8 text-[#2563EB]" />,
     title: "Formatação e Windows",
     desc: "Instalação limpa do sistema com todos os drivers configurados.",
   },
   {
-    icon: "🛡️",
+    icon: <ShieldCheck className="w-8 h-8 text-[#2563EB]" />,
     title: "Remoção de Vírus",
     desc: "Limpeza completa de malware e otimização do PC.",
   },
   {
-    icon: "💾",
+    icon: <HardDriveDownload className="w-8 h-8 text-[#2563EB]" />,
     title: "Instalação de Programas",
     desc: "Configuração de softwares e drivers essenciais para o seu uso.",
   },
   {
-    icon: "📁",
+    icon: <FolderArchive className="w-8 h-8 text-[#2563EB]" />,
     title: "Backup de Arquivos",
     desc: "Seus dados protegidos antes de qualquer manutenção.",
   },
   {
-    icon: "🖱️",
+    icon: <MousePointer2 className="w-8 h-8 text-[#2563EB]" />,
     title: "Suporte Remoto",
     desc: "Atendimento via AnyDesk sem precisar sair de casa.",
   },
   {
-    icon: "🧹",
+    icon: <Brush className="w-8 h-8 text-[#2563EB]" />,
     title: "Limpeza Interna",
     desc: "Limpeza física e troca de pasta térmica para o PC durar mais.",
   },
   {
-    icon: "⚡",
+    icon: <Zap className="w-8 h-8 text-[#2563EB]" />,
     title: "Troca de HD por SSD",
     desc: "Seu computador até 5x mais rápido com upgrade de armazenamento.",
   },
   {
-    icon: "🔧",
+    icon: <Wrench className="w-8 h-8 text-[#2563EB]" />,
     title: "Upgrade de Memória RAM",
     desc: "Mais velocidade para multitarefas e programas pesados.",
   },
 ];
 
 interface ServiceCardProps {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   desc: string;
   service?: "site" | "bot" | "bio" | "default";
@@ -118,13 +123,16 @@ function ServiceCard({ icon, title, desc, service = "default" }: ServiceCardProp
     <motion.div
       variants={fadeUp}
       whileHover={{ scale: 1.02 }}
-      className="bg-white border border-[#E5E7EB] rounded-[20px] p-6 flex flex-col gap-3 cursor-default"
+      className="relative overflow-hidden bg-white border border-[#E5E7EB] rounded-[20px] p-6 flex flex-col gap-3 cursor-default group"
       style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}
     >
-      <span className="text-3xl">{icon}</span>
-      <h3 className="text-[#111111] font-bold text-base">{title}</h3>
-      <p className="text-[#6B7280] text-sm leading-relaxed">{desc}</p>
-      <div className="mt-2">
+      {/* Glare effect on hover */}
+      <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-[-20deg] group-hover:animate-glare z-10 pointer-events-none" />
+      
+      <div className="text-[#2563EB] relative z-20">{icon}</div>
+      <h3 className="text-[#111111] font-bold text-base relative z-20">{title}</h3>
+      <p className="text-[#6B7280] text-sm leading-relaxed relative z-20">{desc}</p>
+      <div className="mt-2 relative z-20">
         {renderCTAButton()}
       </div>
     </motion.div>

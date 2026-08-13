@@ -18,9 +18,20 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F8F8F6]"
     >
-      {/* Grid pontilhado decorativo */}
+      {/* Imagem de Fundo Abstrata */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/hero-bg.png"
+          alt=""
+          className="w-full h-full object-cover opacity-60"
+        />
+        {/* Gradiente para fundir com a próxima seção */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F8F8F6] via-transparent to-white/30" />
+      </div>
+
+      {/* Grid pontilhado decorativo por cima da imagem */}
       <div
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0 opacity-30 z-0"
         style={{
           backgroundImage:
             "radial-gradient(circle, #d1d5db 1px, transparent 1px)",
@@ -30,7 +41,7 @@ export default function Hero() {
 
       {/* Blob azul suave */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-[0.15] pointer-events-none z-0"
         style={{
           background: "radial-gradient(circle, #2563EB 0%, transparent 70%)",
         }}

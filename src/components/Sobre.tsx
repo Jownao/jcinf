@@ -111,21 +111,40 @@ export default function Sobre() {
               </motion.div>
             ))}
 
-            {/* Card destaque */}
+            {/* Card destaque 1 */}
             <motion.div
               variants={fadeUp}
-              className="col-span-2 bg-[#2563EB] rounded-[20px] p-6 flex items-center gap-4"
+              className="bg-[#2563EB] rounded-[20px] p-5 flex flex-col gap-3"
               style={{ boxShadow: "0 4px 24px rgba(37,99,235,0.25)" }}
             >
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-lg">✓</span>
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-sm font-bold">✓</span>
               </div>
               <div>
-                <p className="text-white font-bold text-base leading-snug">
-                  Entrega rápida e sem enrolação
+                <p className="text-white font-bold text-sm leading-snug">
+                  Entrega rápida
                 </p>
-                <p className="text-blue-200 text-sm mt-0.5">
-                  Do briefing ao site no ar em poucos dias
+                <p className="text-blue-200 text-xs mt-1">
+                  Sem burocracia ou enrolação
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card destaque 2 */}
+            <motion.div
+              variants={fadeUp}
+              className="bg-[#2563EB] rounded-[20px] p-5 flex flex-col gap-3"
+              style={{ boxShadow: "0 4px 24px rgba(37,99,235,0.25)" }}
+            >
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-sm">💬</span>
+              </div>
+              <div>
+                <p className="text-white font-bold text-sm leading-snug">
+                  Suporte direto
+                </p>
+                <p className="text-blue-200 text-xs mt-1">
+                  Fale direto com quem faz
                 </p>
               </div>
             </motion.div>

@@ -10,6 +10,21 @@
   --border: #E5E7EB;
 }
 
+@theme {
+  --font-display: var(--font-outfit);
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-glare: glare 1.2s ease-in-out infinite;
+
+  @keyframes glare {
+    0% { transform: translateX(-150%) skewX(-20deg); }
+    100% { transform: translateX(200%) skewX(-20deg); }
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-outfit);
+}
+
 body {
   background: var(--background);
   color: var(--text-primary);

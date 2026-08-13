@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
+import TiltCard from "./TiltCard";
 
 const WA_LINK =
   "https://wa.me/5579981423483?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais!";
@@ -13,6 +14,8 @@ interface Project {
   name: string;
   desc: string;
   mockup: React.ReactNode;
+  link?: string;
+  tag?: string;
 }
 
 const categories: {
@@ -131,75 +134,37 @@ function LinkBioCard({ color, emoji, name, links: ls }: {
 
 const siteProjects: Project[] = [
   {
-    name: "Consultório Dra. Ana Lima",
-    desc: "Site para psicóloga com apresentação, serviços e agendamento online.",
+    name: "Isis Advogada",
+    desc: "Site profissional para advocacia com apresentação de áreas de atuação e contato direto.",
+    link: "https://isis-advogada.vercel.app/",
     mockup: (
       <DesktopMockup>
-        <div className="bg-white min-h-[160px] p-4 flex flex-col gap-3">
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-[10px] font-bold text-[#7c3aed]">Dra. Ana Lima</span>
-            <div className="flex gap-2">
-              {["Sobre","Serviços","Contato"].map(l => (
-                <span key={l} className="text-[7px] text-gray-400">{l}</span>
-              ))}
-            </div>
-          </div>
-          <div className="bg-gradient-to-br from-[#f3e8ff] to-[#ede9fe] rounded-lg p-3 flex flex-col gap-1.5">
-            <div className="w-20 h-2.5 bg-[#7c3aed] rounded-full opacity-80" />
-            <div className="w-28 h-1.5 bg-[#a78bfa] rounded-full opacity-50" />
-            <div className="w-16 h-5 bg-[#7c3aed] rounded-full mt-1 opacity-90" />
-          </div>
-          <div className="grid grid-cols-3 gap-1.5">
-            {["Ansiedade","Depressão","Relacionamentos"].map(s => (
-              <div key={s} className="bg-[#f5f3ff] rounded-md p-1.5 flex flex-col gap-0.5">
-                <div className="w-full h-1.5 bg-[#c4b5fd] rounded-full" />
-                <div className="w-2/3 h-1 bg-[#ddd6fe] rounded-full" />
-              </div>
-            ))}
-          </div>
-        </div>
+        <img 
+          src="/isis-advogada.png" 
+          alt="Isis Advogada" 
+          className="w-full h-[160px] object-cover object-top"
+        />
       </DesktopMockup>
     ),
   },
   {
-    name: "Clínica OdontoVida",
-    desc: "Site para dentista com galeria, equipe e formulário de contato.",
+    name: "Johnny Costa | Data Engineer",
+    desc: "Portfólio pessoal focado em Engenharia de Dados, destacando projetos e habilidades.",
+    link: "https://jownao.github.io/johnny-costa-data-engineer/",
     mockup: (
       <DesktopMockup>
-        <div className="bg-white min-h-[160px] p-4 flex flex-col gap-3">
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-[10px] font-bold text-[#0284c7]">OdontoVida</span>
-            <div className="flex gap-2">
-              {["Equipe","Serviços","Agendar"].map(l => (
-                <span key={l} className="text-[7px] text-gray-400">{l}</span>
-              ))}
-            </div>
-          </div>
-          <div className="bg-gradient-to-br from-[#e0f2fe] to-[#bae6fd] rounded-lg p-3 flex gap-3 items-center">
-            <div className="flex flex-col gap-1.5 flex-1">
-              <div className="w-20 h-2.5 bg-[#0284c7] rounded-full opacity-80" />
-              <div className="w-24 h-1.5 bg-[#38bdf8] rounded-full opacity-50" />
-              <div className="w-14 h-5 bg-[#0284c7] rounded-full mt-1 opacity-90" />
-            </div>
-            <div className="w-12 h-12 rounded-full bg-[#bae6fd] flex items-center justify-center text-xl">
-              🦷
-            </div>
-          </div>
-          <div className="flex gap-1.5">
-            {[1,2,3].map(i => (
-              <div key={i} className="flex-1 bg-[#f0f9ff] rounded-md p-1.5 flex flex-col gap-0.5">
-                <div className="w-full h-1.5 bg-[#7dd3fc] rounded-full" />
-                <div className="w-2/3 h-1 bg-[#bae6fd] rounded-full" />
-              </div>
-            ))}
-          </div>
-        </div>
+        <img 
+          src="/johnny-data-engineer.png" 
+          alt="Johnny Costa Data Engineer" 
+          className="w-full h-[160px] object-cover object-top"
+        />
       </DesktopMockup>
     ),
   },
   {
     name: "Nutri Fernanda Souza",
     desc: "Site para nutricionista com blog de dicas e agendamento via WhatsApp.",
+    tag: "Exemplo fictício",
     mockup: (
       <DesktopMockup>
         <div className="bg-white min-h-[160px] p-4 flex flex-col gap-3">
@@ -385,7 +350,7 @@ export default function Portfolio() {
             Nossos projetos
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#111111] leading-tight">
-            Portfolio
+            Portfólio
           </h2>
           <p className="text-[#6B7280] text-lg mt-4 max-w-xl mx-auto">
             Clique em uma categoria para ver exemplos de projetos.
@@ -494,18 +459,31 @@ export default function Portfolio() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 }}
-                      className="bg-[#F8F8F6] border border-[#E5E7EB] rounded-[16px] p-5 flex flex-col gap-4"
+                      className="h-full"
                     >
-                      <div className="flex items-center justify-center py-2">
-                        {project.mockup}
-                      </div>
-                      <div className="flex flex-col gap-1">
-                        <h4 className="text-[#111111] font-bold text-sm">{project.name}</h4>
-                        <p className="text-[#6B7280] text-xs leading-relaxed">{project.desc}</p>
-                      </div>
-                      <span className={`self-start text-xs font-semibold px-3 py-1 rounded-full border ${active.bg} ${active.color} ${active.border}`}>
-                        Exemplo
-                      </span>
+                      <TiltCard className="bg-[#F8F8F6] border border-[#E5E7EB] rounded-[16px] p-5 flex flex-col gap-4 h-full">
+                        <div className="flex items-center justify-center py-2">
+                          {project.mockup}
+                        </div>
+                        <div className="flex flex-col gap-1 flex-1">
+                          <h4 className="text-[#111111] font-bold text-sm">{project.name}</h4>
+                          <p className="text-[#6B7280] text-xs leading-relaxed">{project.desc}</p>
+                        </div>
+                        {project.link ? (
+                          <a 
+                            href={project.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className={`self-start text-xs font-semibold px-4 py-1.5 rounded-full border ${active.bg} ${active.color} ${active.border} hover:opacity-80 transition-opacity`}
+                          >
+                            Ver site ao vivo ↗
+                          </a>
+                        ) : (
+                          <span className={`self-start text-xs font-semibold px-3 py-1 rounded-full border ${active.bg} ${active.color} ${active.border}`}>
+                            {project.tag || "Exemplo"}
+                          </span>
+                        )}
+                      </TiltCard>
                     </motion.div>
                   ))}
                 </div>

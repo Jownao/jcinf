@@ -11,35 +11,40 @@ export default function ScrollNavigator() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Detectar qual seção está mais visível (topo da viewport)
-      let closestIndex = 0;
-      let closestDistance = Infinity;
+      // Se chegou no final da página (com uma margem de segurança de 50px)
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+      
+      if (isAtBottom) {
+        setIsVisible(false);
+        return;
+      }
 
-      SECTIONS.forEach((sectionId, index) => {
-        const element = document.getElementById(sectionId);
-        if (!element) return;
-
-        // Usar distância do topo do elemento até o topo da viewport
-        const distance = element.getBoundingClientRect().top;
-
-        // Pegar a seção que está mais próxima do topo (mas ainda visível ou acima)
-        if (distance <= window.innerHeight / 2 && distance > -window.innerHeight) {
-          if (Math.abs(distance) < Math.abs(closestDistance)) {
-            closestDistance = distance;
-            closestIndex = index;
+      // Procurar qual seção está ativa, olhando de baixo para cima
+      let activeIndex = 0;
+      for (let i = SECTIONS.length - 1; i >= 0; i--) {
+        const element = document.getElementById(SECTIONS[i]);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Se o topo do elemento já passou do meio da tela, esta é a seção ativa
+          if (rect.top <= window.innerHeight / 2) {
+            activeIndex = i;
+            break;
           }
         }
-      });
+      }
 
-      setCurrentIndex(closestIndex);
-
-      // Ocultar botão na última seção
-      setIsVisible(closestIndex < SECTIONS.length - 1);
+      setCurrentIndex(activeIndex);
+      // Ocultar na última seção
+      setIsVisible(activeIndex < SECTIONS.length - 1);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Chamar na montagem
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Usar timeout para garantir que o DOM e as dimensões da janela já estão carregados
+    const initTimer = setTimeout(handleScroll, 100);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(initTimer);
+    };
   }, []);
 
   const handleClick = () => {

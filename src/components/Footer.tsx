@@ -34,7 +34,7 @@ export default function Footer() {
 
         {/* CTA e Copyright */}
         <div className="flex items-center gap-4">
-          <DefaultCTAButton label="Falar agora" size="sm" />
+          <DefaultCTAButton label="Falar agora" size="sm" showIcon={false} />
           <p className="text-xs text-[#6B7280]">
             © {new Date().getFullYear()} JCINF. Todos os direitos reservados.
           </p>

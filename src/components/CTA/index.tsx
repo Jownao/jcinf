@@ -12,8 +12,8 @@ export function SiteButton({
   return (
     <CTAButton
       service="site"
-      label="Criar um Site"
-      variant="primary"
+      label="Criar meu Site"
+      variant="animated"
       size={size}
       className={className}
     />
@@ -30,8 +30,8 @@ export function BotButton({
   return (
     <CTAButton
       service="bot"
-      label="Automação WhatsApp"
-      variant="secondary"
+      label="Automatizar meu WhatsApp"
+      variant="primary"
       size={size}
       className={className}
     />
@@ -48,7 +48,7 @@ export function BioButton({
   return (
     <CTAButton
       service="bio"
-      label="Link na Bio"
+      label="Criar minha Página"
       variant="primary"
       size={size}
       className={className}
@@ -57,13 +57,15 @@ export function BioButton({
 }
 
 export function DefaultCTAButton({
-  label = "Falar no WhatsApp",
+  label = "Iniciar meu projeto",
   size = "md",
   className = "",
+  showIcon = true,
 }: {
   label?: string;
   size?: "sm" | "md" | "lg";
   className?: string;
+  showIcon?: boolean;
 }) {
   return (
     <CTAButton
@@ -72,6 +74,7 @@ export function DefaultCTAButton({
       variant="primary"
       size={size}
       className={className}
+      showIcon={showIcon}
     />
   );
 }

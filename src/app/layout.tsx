@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import ScrollNavigator from "@/components/ScrollNavigator";
 import "./globals.css";
 
@@ -7,6 +7,12 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-jakarta",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800", "900"],
+  variable: "--font-outfit",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${jakarta.variable}`}>
+    <html lang="pt-BR" className={`${jakarta.variable} ${outfit.variable}`}>
       <body className="min-h-full flex flex-col antialiased font-(family-name:--font-jakarta)">
         {children}
         <ScrollNavigator />
