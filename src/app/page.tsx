@@ -5,6 +5,7 @@ import Servicos from "@/components/Servicos";
 import Portfolio from "@/components/Portfolio";
 import Contato from "@/components/Contato";
 import Footer from "@/components/Footer";
+import ScrollNavigator from "@/components/ScrollNavigator";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Portfolio />
       <Contato />
       <Footer />
+      <ScrollNavigator />
     </main>
   );
 }

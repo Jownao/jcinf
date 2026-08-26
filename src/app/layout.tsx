@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
-import ScrollNavigator from "@/components/ScrollNavigator";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -70,7 +69,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
-        <ScrollNavigator />
       </body>
     </html>
   );

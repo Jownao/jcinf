@@ -114,18 +114,25 @@ function ChatBubble({ from, text }: { from: "user" | "bot"; text: string }) {
   );
 }
 
-function LinkBioCard({ color, emoji, name, links: ls }: {
+function LinkBioCard({ color, emoji, photo, name, links: ls }: {
   color: string;
-  emoji: string;
+  emoji?: string;
+  photo?: string;
   name: string;
   links: string[];
 }) {
   return (
     <PhoneMockup>
       <div className={`min-h-[220px] ${color} flex flex-col items-center pt-5 px-3 pb-3 gap-2`}>
-        <div className="w-12 h-12 rounded-full bg-white/30 flex items-center justify-center text-2xl shadow">
-          {emoji}
-        </div>
+        {photo ? (
+          <div className="relative w-12 h-12 rounded-full overflow-hidden shadow border-2 border-white/40">
+            <Image src={photo} alt={name} fill sizes="48px" className="object-cover" />
+          </div>
+        ) : (
+          <div className="w-12 h-12 rounded-full bg-white/30 flex items-center justify-center text-2xl shadow">
+            {emoji}
+          </div>
+        )}
         <p className="text-white text-[10px] font-bold mt-0.5">{name}</p>
         <div className="w-full flex flex-col gap-1.5 mt-1">
           {ls.map((l) => (
@@ -291,6 +298,19 @@ const botProjects: Project[] = [
 ];
 
 const linkbioProjects: Project[] = [
+  {
+    name: "Johnny C, Página de Links",
+    desc: "Meus próprios links: JCINF, Instagram, fotografia e portfólio, num só lugar.",
+    link: "https://jcinf.vercel.app/links",
+    mockup: (
+      <LinkBioCard
+        color="bg-[#111111]"
+        photo="/linktree.jpeg"
+        name="Johnny C"
+        links={["JCINF","Instagram","Fotografia","Portfólio Data Engineer"]}
+      />
+    ),
+  },
   {
     name: "Psicóloga Dra. Carla",
     desc: "Página de links com agendamento, Instagram, artigos e contato.",
