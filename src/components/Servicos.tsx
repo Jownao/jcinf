@@ -60,41 +60,49 @@ const suporte = [
     icon: <Monitor className="w-8 h-8 text-[#2563EB]" />,
     title: "Formatação e Windows",
     desc: "Instalação limpa do sistema com todos os drivers configurados.",
+    service: "formatacao" as const,
   },
   {
     icon: <ShieldCheck className="w-8 h-8 text-[#2563EB]" />,
     title: "Remoção de Vírus",
     desc: "Limpeza completa de malware e otimização do PC.",
+    service: "virus" as const,
   },
   {
     icon: <HardDriveDownload className="w-8 h-8 text-[#2563EB]" />,
     title: "Instalação de Programas",
     desc: "Configuração de softwares e drivers essenciais para o seu uso.",
+    service: "programas" as const,
   },
   {
     icon: <FolderArchive className="w-8 h-8 text-[#2563EB]" />,
     title: "Backup de Arquivos",
     desc: "Seus dados protegidos antes de qualquer manutenção.",
+    service: "backup" as const,
   },
   {
     icon: <MousePointer2 className="w-8 h-8 text-[#2563EB]" />,
     title: "Suporte Remoto",
     desc: "Atendimento via AnyDesk sem precisar sair de casa.",
+    service: "suporte-remoto" as const,
   },
   {
     icon: <Brush className="w-8 h-8 text-[#2563EB]" />,
     title: "Limpeza Interna",
     desc: "Limpeza física e troca de pasta térmica para o PC durar mais.",
+    service: "limpeza" as const,
   },
   {
     icon: <Zap className="w-8 h-8 text-[#2563EB]" />,
     title: "Troca de HD por SSD",
     desc: "Seu computador até 5x mais rápido com upgrade de armazenamento.",
+    service: "ssd" as const,
   },
   {
     icon: <Wrench className="w-8 h-8 text-[#2563EB]" />,
     title: "Upgrade de Memória RAM",
     desc: "Mais velocidade para multitarefas e programas pesados.",
+    service: "ram" as const,
   },
 ];
 
@@ -102,7 +110,7 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   desc: string;
-  service?: "site" | "bot" | "bio" | "default";
+  service?: string;
 }
 
 function ServiceCard({ icon, title, desc, service = "default" }: ServiceCardProps) {
@@ -115,7 +123,7 @@ function ServiceCard({ icon, title, desc, service = "default" }: ServiceCardProp
       case "bio":
         return <BioButton size="sm" />;
       default:
-        return <DefaultCTAButton label="Saber mais" size="sm" />;
+        return <DefaultCTAButton label="Saber mais" service={service} size="sm" />;
     }
   };
 
@@ -171,7 +179,7 @@ export default function Servicos() {
             Serviços disponíveis
           </h2>
           <p className="text-[#6B7280] text-lg mt-4 max-w-xl mx-auto">
-            Do site profissional ao suporte técnico — tudo que seu negócio
+            Do site profissional ao suporte técnico: tudo que seu negócio
             precisa num só lugar.
           </p>
         </motion.div>

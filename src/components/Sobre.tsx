@@ -22,9 +22,8 @@ const stagger = {
 
 const stats = [
   { value: "100%", label: "Comprometimento" },
-  { value: "24h", label: "Tempo de resposta" },
-  { value: "2+", label: "Anos de experiência" },
-  { value: "∞", label: "Suporte pós-entrega" },
+  { value: "1h", label: "Tempo de resposta" },
+  { value: "3+", label: "Anos de experiência" },
 ];
 
 export default function Sobre() {
@@ -61,8 +60,8 @@ export default function Sobre() {
               className="text-[#6B7280] text-lg leading-relaxed mb-4"
             >
               Somos uma micro-agência especializada em soluções digitais para
-              negócios locais. Unimos design, desenvolvimento e automação para
-              entregar projetos que realmente funcionam — sem burocracia e com
+              negócios de qualquer área. Unimos design, desenvolvimento e automação
+              para entregar projetos que realmente funcionam, sem burocracia e com
               comunicação direta.
             </motion.p>
 
@@ -133,7 +132,7 @@ export default function Sobre() {
             {/* Card destaque 2 */}
             <motion.div
               variants={fadeUp}
-              className="bg-[#2563EB] rounded-[20px] p-5 flex flex-col gap-3"
+              className="col-span-2 bg-[#2563EB] rounded-[20px] p-5 flex items-center gap-3"
               style={{ boxShadow: "0 4px 24px rgba(37,99,235,0.25)" }}
             >
               <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">

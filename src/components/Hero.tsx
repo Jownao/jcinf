@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SiteButton, DefaultCTAButton } from "@/components/CTA";
 
 const fadeUp = {
@@ -20,10 +21,13 @@ export default function Hero() {
     >
       {/* Imagem de Fundo Abstrata */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/hero-bg.jpg"
           alt=""
-          className="w-full h-full object-cover opacity-60"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-60"
         />
         {/* Gradiente para fundir com a próxima seção */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#F8F8F6] via-transparent to-white/30" />
@@ -84,7 +88,7 @@ export default function Hero() {
           className="text-lg md:text-xl text-[#6B7280] leading-relaxed mb-10 max-w-xl mx-auto"
         >
           Criamos sites, automações e bots de WhatsApp para pequenas e médias
-          empresas — do zero ao ar, sem complicação.
+          empresas, do zero ao ar e sem complicação.
         </motion.p>
 
         {/* Botões */}

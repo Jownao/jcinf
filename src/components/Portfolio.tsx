@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 import { X } from "lucide-react";
 import TiltCard from "./TiltCard";
 import { getWhatsAppLink } from "@/utils/whatsapp";
@@ -145,11 +146,15 @@ const siteProjects: Project[] = [
     link: "https://isis-advogada.vercel.app/",
     mockup: (
       <DesktopMockup>
-        <img 
-          src="/isis-advogada.png" 
-          alt="Isis Advogada" 
-          className="w-full h-[160px] object-cover object-top"
-        />
+        <div className="relative w-full h-[160px]">
+          <Image
+            src="/isis-advogada.png"
+            alt="Isis Advogada"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover object-top"
+          />
+        </div>
       </DesktopMockup>
     ),
   },
@@ -159,18 +164,22 @@ const siteProjects: Project[] = [
     link: "https://jownao.github.io/johnny-costa-data-engineer/",
     mockup: (
       <DesktopMockup>
-        <img 
-          src="/johnny-data-engineer.png" 
-          alt="Johnny Costa Data Engineer" 
-          className="w-full h-[160px] object-cover object-top"
-        />
+        <div className="relative w-full h-[160px]">
+          <Image
+            src="/johnny-data-engineer.png"
+            alt="Johnny Costa Data Engineer"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover object-top"
+          />
+        </div>
       </DesktopMockup>
     ),
   },
   {
     name: "Nutri Fernanda Souza",
     desc: "Site para nutricionista com blog de dicas e agendamento via WhatsApp.",
-    tag: "Exemplo fictício",
+    tag: "Exemplo ilustrativo",
     mockup: (
       <DesktopMockup>
         <div className="bg-white min-h-[160px] p-4 flex flex-col gap-3">
@@ -289,7 +298,7 @@ const linkbioProjects: Project[] = [
       <LinkBioCard
         color="bg-gradient-to-b from-[#7c3aed] to-[#a855f7]"
         emoji="🧠"
-        name="Dra. Carla — Psicóloga"
+        name="Dra. Carla, Psicóloga"
         links={["Agendar Consulta","Instagram","Artigos","WhatsApp"]}
       />
     ),
@@ -486,7 +495,7 @@ export default function Portfolio() {
                           </a>
                         ) : (
                           <span className={`self-start text-xs font-semibold px-3 py-1 rounded-full border ${active.bg} ${active.color} ${active.border}`}>
-                            {project.tag || "Exemplo"}
+                            {project.tag || "Exemplo ilustrativo"}
                           </span>
                         )}
                       </TiltCard>

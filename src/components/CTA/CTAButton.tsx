@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 
 interface CTAButtonProps {
-  service: "site" | "bot" | "bio" | "default";
+  service: string;
   label: string;
   variant?: "primary" | "secondary" | "white" | "animated";
   size?: "sm" | "md" | "lg";

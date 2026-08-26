@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "JCINF — Sites, Automações e Suporte Técnico";
+export const alt = "JCINF: Sites, Automações e Suporte Técnico";
 export const size = {
   width: 1200,
   height: 630,
@@ -75,7 +75,7 @@ export default function Image() {
             fontWeight: 500,
           }}
         >
-          JCINF — digitalize seu negócio, sem complicação.
+          JCINF: digitalize seu negócio, sem complicação.
         </div>
       </div>
     ),

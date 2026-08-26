@@ -16,9 +16,27 @@ const outfit = Outfit({
 });
 
 const siteUrl = "https://jcinf.vercel.app";
-const title = "JCINF — Sites, Automações e Suporte Técnico";
+const title = "JCINF: Sites, Automações e Suporte Técnico em Sergipe";
 const description =
-  "Criamos sites profissionais, bots de WhatsApp e automações para pequenas empresas — e oferecemos suporte técnico completo: formatação, manutenção, upgrade e remoção de vírus. Fale com a JCINF.";
+  "Criamos sites profissionais, bots de WhatsApp e automações para empresas em Sergipe e remoto, além de suporte técnico completo: formatação, manutenção, upgrade e remoção de vírus. Fale com a JCINF.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "JCINF",
+  url: siteUrl,
+  description,
+  telephone: "+5579981423483",
+  areaServed: [
+    { "@type": "State", name: "Sergipe" },
+    { "@type": "Country", name: "Brasil" },
+  ],
+  makesOffer: [
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Criação de sites profissionais" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bot de WhatsApp" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Suporte técnico e manutenção de computadores" } },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -47,6 +65,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${jakarta.variable} ${outfit.variable}`}>
       <body className="min-h-full flex flex-col antialiased font-(family-name:--font-jakarta)">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <ScrollNavigator />
       </body>

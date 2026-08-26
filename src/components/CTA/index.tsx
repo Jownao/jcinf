@@ -58,18 +58,20 @@ export function BioButton({
 
 export function DefaultCTAButton({
   label = "Iniciar meu projeto",
+  service = "default",
   size = "md",
   className = "",
   showIcon = true,
 }: {
   label?: string;
+  service?: string;
   size?: "sm" | "md" | "lg";
   className?: string;
   showIcon?: boolean;
 }) {
   return (
     <CTAButton
-      service="default"
+      service={service}
       label={label}
       variant="primary"
       size={size}
