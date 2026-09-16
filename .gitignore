@@ -39,6 +39,9 @@ yarn-error.log*
 # MazyOS — workspace de negócio, repo próprio (privado), nunca entra aqui
 /negocio
 
+# docs internos com valores reais — não expor no repo do site
+/docs
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

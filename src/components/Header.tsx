@@ -8,6 +8,7 @@ import { getWhatsAppLink } from "@/utils/whatsapp";
 const links = [
   { label: "Sobre", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
+  { label: "Preços", href: "#precos" },
   { label: "Portfólio", href: "#portfolio" },
   { label: "Contato", href: "#contato" },
 ];

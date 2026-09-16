@@ -18,6 +18,12 @@ const WA_MESSAGES: Record<string, string> = {
     "Olá! Vim pelo site da JCINF e quero fazer limpeza interna e troca de pasta térmica do meu PC.",
   ssd: "Olá! Vim pelo site da JCINF e quero trocar meu HD por SSD.",
   ram: "Olá! Vim pelo site da JCINF e quero fazer upgrade de memória RAM do meu PC.",
+  "plano-pagina-unica":
+    "Olá! Vim pelo site da JCINF e tenho interesse no plano Página Única. Pode me passar os valores?",
+  "plano-institucional":
+    "Olá! Vim pelo site da JCINF e tenho interesse no plano Site Institucional. Pode me passar os valores?",
+  "plano-sistema":
+    "Olá! Vim pelo site da JCINF e tenho interesse no plano Site + Sistema. Pode me passar os valores?",
   default:
     "Olá! Vim pelo site da JCINF e gostaria de saber mais sobre os serviços.",
 };

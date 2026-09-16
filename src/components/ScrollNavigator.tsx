@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const SECTIONS = ["hero", "sobre", "servicos", "portfolio", "contato"];
+const SECTIONS = ["hero", "sobre", "servicos", "precos", "portfolio", "contato"];
 
 export default function ScrollNavigator() {
   const [currentIndex, setCurrentIndex] = useState(0);
